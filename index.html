@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Race Dip</title>
+  <title>Color Dip Race</title>
   <style>
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -12,19 +13,23 @@
       background-color: #f9f9f9;
       text-align: center;
     }
+
     header {
       background-color: #ff6f61;
       color: white;
       padding: 20px;
     }
+
     h1 {
       font-size: 3rem;
       margin: 0;
     }
+
     .tagline {
       font-size: 1.2rem;
       margin-top: 10px;
     }
+
     .start-button {
       margin-top: 50px;
       padding: 15px 30px;
@@ -36,45 +41,149 @@
       cursor: pointer;
       animation: pulse 1.5s infinite;
     }
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+
+    .game-page {
+      display: none; /* Hidden by default */
+      padding: 20px;
+    }
+
+    .game-page h2 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    canvas {
+      border: 2px solid #333;
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .controls button:hover {
+      background-color: #45a049;
+    }
+
     footer {
-      margin-top: 100px;
+      margin-top: 50px;
       padding: 20px;
       background-color: #333;
       color: white;
     }
+
     footer a {
       color: #4caf50;
       text-decoration: none;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .start-button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Introduction Page -->
   <header>
-    <h1>Color Race Dip</h1>
+    <h1>Color Dip Race</h1>
     <p class="tagline">Dip into Creativity and Learning!</p>
   </header>
 
   <main>
     <section id="intro">
-      <p>Welcome to Color Race Dip! Generate fun outline images, color them, and learn something new along the way. Ready to start?</p>
+      <p>Welcome to Color Dip Race! Generate fun outline images, color them, and learn something new along the way. Ready to start?</p>
       <button class="start-button" onclick="startGame()">Tap to Start</button>
+    </section>
+
+    <!-- Game Page -->
+    <section id="game-page" class="game-page">
+      <h2>Color Your Image</h2>
+      <canvas id="drawing-canvas" width="500" height="500"></canvas>
+      <div class="controls">
+        <button onclick="clearCanvas()">Clear Canvas</button>
+        <button onclick="generateNewImage()">Generate New Image</button>
+      </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>Design by <strong>Kofi Fosu</strong></p>
     <p>Email: <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
   </footer>
 
   <script>
+    // Canvas and Context
+    const canvas = document.getElementById("drawing-canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Start Game Function
     function startGame() {
-      alert("Let the coloring begin! 🎨"); // Replace this with your game logic
-      // Example: Redirect to a coloring page or generate an image
+      // Hide intro page and show game page
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("game-page").style.display = "block";
+
+      // Load initial outline image
+      generateNewImage();
+    }
+
+    // Generate New Image Function (Mock API Call)
+    function generateNewImage() {
+      // Mock API call to generate an outline image
+      const img = new Image();
+      img.src = `https://picsum.photos/500/500?random=${Math.random()}`; // Replace with AI-generated outline image
+      img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Draw new image
+      };
+    }
+
+    // Clear Canvas Function
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Coloring Logic
+    let isDrawing = false;
+
+    canvas.addEventListener("mousedown", () => (isDrawing = true));
+    canvas.addEventListener("mouseup", () => (isDrawing = false));
+    canvas.addEventListener("mousemove", draw);
+
+    function draw(event) {
+      if (!isDrawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      ctx.fillStyle = "#ff0000"; // Default color (red)
+      ctx.fillRect(x, y, 10, 10); // Draw a small square at the mouse position
     }
   </script>
 </body>
