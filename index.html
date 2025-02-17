@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Race Dip</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    header {
+      background-color: #ff6f61;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    .start-button {
+      margin-top: 50px;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      color: white;
+      background-color: #4caf50;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    footer {
+      margin-top: 100px;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+    footer a {
+      color: #4caf50;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Color Race Dip</h1>
+    <p class="tagline">Dip into Creativity and Learning!</p>
+  </header>
+
+  <main>
+    <section id="intro">
+      <p>Welcome to Color Race Dip! Generate fun outline images, color them, and learn something new along the way. Ready to start?</p>
+      <button class="start-button" onclick="startGame()">Tap to Start</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Design by <strong>Kofi Fosu</strong></p>
+    <p>Email: <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
+  </footer>
+
+  <script>
+    function startGame() {
+      alert("Let the coloring begin! 🎨"); // Replace this with your game logic
+      // Example: Redirect to a coloring page or generate an image
+    }
+  </script>
+</body>
+</html>
