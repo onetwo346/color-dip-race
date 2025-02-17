@@ -3,31 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Dip Race</title>
+  <title>Dip image Generator</title>
   <style>
     /* General Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
       text-align: center;
+      color: #333;
     }
 
     header {
       background-color: #ff6f61;
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     h1 {
       font-size: 3rem;
       margin: 0;
+      font-weight: bold;
     }
 
     .tagline {
       font-size: 1.2rem;
       margin-top: 10px;
+      opacity: 0.9;
     }
 
     .start-button {
@@ -40,6 +43,11 @@
       border-radius: 50px;
       cursor: pointer;
       animation: pulse 1.5s infinite;
+      transition: background-color 0.3s ease;
+    }
+
+    .start-button:hover {
+      background-color: #45a049;
     }
 
     @keyframes pulse {
@@ -56,17 +64,24 @@
     .game-page h2 {
       font-size: 2rem;
       color: #333;
+      margin-bottom: 20px;
     }
 
     canvas {
-      border: 2px solid #333;
+      border: 2px solid #ddd;
       max-width: 100%;
       height: auto;
       margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .controls {
       margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .controls button {
@@ -78,6 +93,7 @@
       border-radius: 5px;
       background-color: #4caf50;
       color: white;
+      transition: background-color 0.3s ease;
     }
 
     .controls button:hover {
@@ -111,23 +127,20 @@
 <body>
   <!-- Introduction Page -->
   <header>
-    <h1>Color Dip Race</h1>
+    <h1>Dip image Generator</h1>
     <p class="tagline">Dip into Creativity and Learning!</p>
+    <button class="start-button" onclick="startGame()">Tap to Start</button>
   </header>
 
+  <!-- Game Page -->
   <main>
-    <section id="intro">
-      <p>Welcome to Color Dip Race! Generate fun outline images, color them, and learn something new along the way. Ready to start?</p>
-      <button class="start-button" onclick="startGame()">Tap to Start</button>
-    </section>
-
-    <!-- Game Page -->
     <section id="game-page" class="game-page">
-      <h2>Color Your Image</h2>
+      <h2>Generate Your Image</h2>
       <canvas id="drawing-canvas" width="500" height="500"></canvas>
       <div class="controls">
         <button onclick="clearCanvas()">Clear Canvas</button>
         <button onclick="generateNewImage()">Generate New Image</button>
+        <button onclick="downloadImage()">Download Image</button>
       </div>
     </section>
   </main>
@@ -146,7 +159,7 @@
     // Start Game Function
     function startGame() {
       // Hide intro page and show game page
-      document.getElementById("intro").style.display = "none";
+      document.querySelector("header").style.display = "none";
       document.getElementById("game-page").style.display = "block";
 
       // Load initial outline image
@@ -167,6 +180,14 @@
     // Clear Canvas Function
     function clearCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Download Image Function
+    function downloadImage() {
+      const link = document.createElement("a");
+      link.download = "colored-image.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
     }
 
     // Coloring Logic
