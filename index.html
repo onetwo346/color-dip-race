@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dip image Generator</title>
+  <title>Dip Image Generator</title>
   <style>
     /* General Styles */
     body {
@@ -33,8 +33,23 @@
       opacity: 0.9;
     }
 
+    .intro-info {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
     .start-button {
-      margin-top: 50px;
+      margin-top: 30px;
       padding: 15px 30px;
       font-size: 1.5rem;
       color: white;
@@ -127,8 +142,17 @@
 <body>
   <!-- Introduction Page -->
   <header>
-    <h1>Dip image Generator</h1>
+    <h1>Dip Image Generator</h1>
     <p class="tagline">Dip into Creativity and Learning!</p>
+    <div class="intro-info">
+      <p>Welcome to <strong>Dip Image Generator</strong>! This tool allows you to generate unique outline images, color them, and download your creations. Perfect for artists, educators, and anyone who loves creativity!</p>
+      <p>How it works:</p>
+      <ol>
+        <li>Tap <strong>Start</strong> to begin.</li>
+        <li>Generate a new outline image or color the existing one.</li>
+        <li>Download your masterpiece when you're done!</li>
+      </ol>
+    </div>
     <button class="start-button" onclick="startGame()">Tap to Start</button>
   </header>
 
@@ -185,7 +209,7 @@
     // Download Image Function
     function downloadImage() {
       const link = document.createElement("a");
-      link.download = "colored-image.png";
+      link.download = "dip-image.png";
       link.href = canvas.toDataURL("image/png");
       link.click();
     }
