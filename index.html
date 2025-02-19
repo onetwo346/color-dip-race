@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dip Image Generator</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KHLG2THV');</script>
+  <!-- End Google Tag Manager -->
   <style>
     /* General Styles */
     body {
@@ -147,6 +154,11 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHLG2THV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- Introduction Page -->
   <header>
     <h1>Dip Image Generator</h1>
@@ -201,6 +213,7 @@
     function generateNewImage() {
       // Mock API call to generate an outline image
       const img = new Image();
+      img.crossOrigin = "anonymous"; // Allow cross-origin image download
       img.src = `https://picsum.photos/500/500?random=${Math.random()}`; // Replace with AI-generated outline image
       img.onload = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
