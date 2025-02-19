@@ -113,10 +113,8 @@
       margin-top: 20px;
       background-color: #fff;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 100%; /* Responsive width */
-      height: auto; /* Maintain aspect ratio */
-      max-width: 500px; /* Limit maximum size */
-      max-height: 500px; /* Limit maximum size */
+      width: 500px; /* Display size */
+      height: 500px; /* Display size */
     }
 
     .controls {
@@ -163,9 +161,6 @@
       .start-button {
         font-size: 1.2rem;
         padding: 10px 20px;
-      }
-      canvas {
-        max-width: 90%; /* Adjust for smaller screens */
       }
     }
   </style>
@@ -219,7 +214,7 @@
     // Set canvas resolution to be high (e.g., 2x display size for sharpness)
     const displayWidth = 500; // Display size
     const displayHeight = 500; // Display size
-    const scaleFactor = window.devicePixelRatio || 1; // Adjust for high-DPI screens
+    const scaleFactor = 2; // Increase for higher resolution
     canvas.width = displayWidth * scaleFactor;
     canvas.height = displayHeight * scaleFactor;
     canvas.style.width = `${displayWidth}px`;
@@ -264,34 +259,21 @@
       link.click();
     }
 
-    // Drawing Logic (Supports both mouse and touch events)
+    // Coloring Logic
     let isDrawing = false;
 
-    // Mouse Events
     canvas.addEventListener("mousedown", () => (isDrawing = true));
     canvas.addEventListener("mouseup", () => (isDrawing = false));
     canvas.addEventListener("mousemove", draw);
 
-    // Touch Events (for mobile devices)
-    canvas.addEventListener("touchstart", (e) => {
-      e.preventDefault(); // Prevent scrolling
-      isDrawing = true;
-      draw(e.touches[0]); // Use the first touch point
-    });
-    canvas.addEventListener("touchend", () => (isDrawing = false));
-    canvas.addEventListener("touchmove", (e) => {
-      e.preventDefault(); // Prevent scrolling
-      draw(e.touches[0]); // Use the first touch point
-    });
-
     function draw(event) {
       if (!isDrawing) return;
       const rect = canvas.getBoundingClientRect();
-      const x = (event.clientX ? event.clientX : event.touches[0].clientX - rect.left) * scaleFactor; // Adjust for high-res canvas
-      const y = (event.clientY ? event.clientY : event.touches[0].clientY - rect.top) * scaleFactor; // Adjust for high-res canvas
+      const x = (event.clientX - rect.left) * scaleFactor; // Adjust for high-res canvas
+      const y = (event.clientY - rect.top) * scaleFactor; // Adjust for high-res canvas
 
       ctx.fillStyle = "#ff0000"; // Default color (red)
-      ctx.fillRect(x, y, 10, 10); // Draw a small square at the mouse/touch position
+      ctx.fillRect(x, y, 10, 10); // Draw a small square at the mouse position
     }
   </script>
 </body>
