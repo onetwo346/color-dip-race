@@ -113,6 +113,8 @@
       margin-top: 20px;
       background-color: #fff;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 500px; /* Display size */
+      height: 500px; /* Display size */
     }
 
     .controls {
@@ -189,7 +191,7 @@
   <main>
     <section id="game-page" class="game-page">
       <h2>Generate Your Image</h2>
-      <canvas id="drawing-canvas" width="500" height="500"></canvas>
+      <canvas id="drawing-canvas"></canvas>
       <div class="controls">
         <button onclick="clearCanvas()">Clear Canvas</button>
         <button onclick="generateNewImage()">Generate New Image</button>
@@ -209,6 +211,16 @@
     const canvas = document.getElementById("drawing-canvas");
     const ctx = canvas.getContext("2d");
 
+    // Set canvas resolution to be high (e.g., 2x display size for sharpness)
+    const displayWidth = 500; // Display size
+    const displayHeight = 500; // Display size
+    const scaleFactor = 2; // Increase for higher resolution
+    canvas.width = displayWidth * scaleFactor;
+    canvas.height = displayHeight * scaleFactor;
+    canvas.style.width = `${displayWidth}px`;
+    canvas.style.height = `${displayHeight}px`;
+    ctx.scale(scaleFactor, scaleFactor); // Scale the context to match display size
+
     // Start Game Function
     function startGame() {
       // Hide intro page and show game page
@@ -224,10 +236,10 @@
       // Mock API call to generate an outline image
       const img = new Image();
       img.crossOrigin = "anonymous"; // Allow cross-origin image download
-      img.src = `https://picsum.photos/500/500?random=${Math.random()}`; // Replace with AI-generated outline image
+      img.src = `https://picsum.photos/${canvas.width}/${canvas.height}?random=${Math.random()}`; // High-resolution image
       img.onload = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // Draw new image
+        ctx.drawImage(img, 0, 0, displayWidth, displayHeight); // Draw new image
       };
     }
 
@@ -240,7 +252,7 @@
     function downloadImage() {
       const link = document.createElement("a");
       link.download = "dip-image.png";
-      link.href = canvas.toDataURL("image/png");
+      link.href = canvas.toDataURL("image/png", 1.0); // Highest quality
       link.click();
     }
 
@@ -254,8 +266,8 @@
     function draw(event) {
       if (!isDrawing) return;
       const rect = canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+      const x = (event.clientX - rect.left) * scaleFactor; // Adjust for high-res canvas
+      const y = (event.clientY - rect.top) * scaleFactor; // Adjust for high-res canvas
 
       ctx.fillStyle = "#ff0000"; // Default color (red)
       ctx.fillRect(x, y, 10, 10); // Draw a small square at the mouse position
