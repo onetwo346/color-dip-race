@@ -246,15 +246,36 @@
       generateNewImage();
     }
 
-    // Generate New Image Function (Mock API Call)
+    // Generate New Image Function (Preserve Aspect Ratio)
     function generateNewImage() {
-      // Mock API call to generate an outline image
       const img = new Image();
       img.crossOrigin = "anonymous"; // Allow cross-origin image download
       img.src = `https://picsum.photos/${canvas.width}/${canvas.height}?random=${Math.random()}`; // High-resolution image
       img.onload = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-        ctx.drawImage(img, 0, 0, displayWidth, displayHeight); // Draw new image
+
+        // Calculate aspect ratio of the image
+        const imgAspectRatio = img.width / img.height;
+        const canvasAspectRatio = displayWidth / displayHeight;
+
+        let drawWidth, drawHeight, offsetX, offsetY;
+
+        if (imgAspectRatio > canvasAspectRatio) {
+          // Image is wider than canvas
+          drawWidth = displayWidth;
+          drawHeight = displayWidth / imgAspectRatio;
+          offsetX = 0;
+          offsetY = (displayHeight - drawHeight) / 2;
+        } else {
+          // Image is taller than canvas
+          drawHeight = displayHeight;
+          drawWidth = displayHeight * imgAspectRatio;
+          offsetX = (displayWidth - drawWidth) / 2;
+          offsetY = 0;
+        }
+
+        // Draw the image with correct aspect ratio
+        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
       };
       img.onerror = () => {
         console.error("Failed to load image. Please try again.");
