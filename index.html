@@ -36,6 +36,22 @@
       background-color: #ff6f61;
       color: white;
       padding: 40px 20px;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 80px; /* Adjust size as needed */
+      height: auto;
+      animation: pulse 2s infinite; /* Pulsating effect */
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     h1 {
@@ -87,12 +103,6 @@
 
     .start-button:hover {
       background-color: #45a049;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
     }
 
     .game-page {
@@ -162,6 +172,9 @@
         font-size: 1.2rem;
         padding: 10px 20px;
       }
+      .logo {
+        width: 60px; /* Smaller logo for mobile */
+      }
     }
   </style>
 </head>
@@ -173,6 +186,8 @@
 
   <!-- Introduction Page -->
   <header>
+    <!-- Logo Added Here -->
+    <img src="https://raw.githubusercontent.com/your-username/your-repo/main/IMG_3828.jpeg" alt="Logo" class="logo">
     <h1>Dip Image Generator</h1>
     <p class="tagline">Dip into Creativity!</p>
     <div class="intro-info">
