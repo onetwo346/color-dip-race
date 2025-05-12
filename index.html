@@ -3,35 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dip Image Generator: Create and customize stunning images with Lorem Picsum. Perfect for artists, designers, and creators.">
-  <meta name="keywords" content="image generator, lorem picsum, art tool, creative, canvas, drawing">
-  <meta name="author" content="Kofi Fosu">
-  <meta name="robots" content="index, follow">
   <title>Dip Image Generator</title>
-
-  <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="Dip Image Generator">
-  <meta property="og:description" content="Unleash your creativity with Dip Image Generator powered by Lorem Picsum.">
-  <meta property="og:image" content="https://picsum.photos/1200/630?random=1">
-  <meta property="og:url" content="https://dip-image-generator.example.com">
-  <meta property="og:type" content="website">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
   <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KHLG2THV');
-  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KHLG2THV');</script>
   <!-- End Google Tag Manager -->
 
-  <!-- Google Analytics -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DYY3L1W27"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,529 +22,273 @@
   </script>
 
   <style>
-    :root {
-      --primary: #ff6f61;
-      --secondary: #4caf50;
-      --background: #f9f9f9;
-      --text: #333;
-      --card-bg: rgba(255, 255, 255, 0.95);
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-
-    [data-theme="dark"] {
-      --primary: #ff8a80;
-      --secondary: #66bb6a;
-      --background: #121212;
-      --text: #e0e0e0;
-      --card-bg: rgba(30, 30, 30, 0.95);
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    * {
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
+      background-color: #f9f9f9;
+      text-align: center;
+      color: #333;
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary), #ff3d00);
+      background-color: #ff6f61;
       color: white;
-      padding: 3rem 1rem;
-      text-align: center;
+      padding: 40px 20px;
       position: relative;
     }
 
     .logo {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
-      width: 60px;
+      top: 20px;
+      left: 20px;
+      width: 80px; /* Adjust size as needed */
       height: auto;
-      transition: var(--transition);
-      animation: pulse 2s infinite;
+      animation: pulse 2s infinite; /* Pulsating effect */
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); }
+      0% { transform: scale(1); }
       50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      margin: 0;
+      font-weight: bold;
     }
 
     .tagline {
-      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-size: 1.2rem;
+      margin-top: 10px;
       opacity: 0.9;
     }
 
     .intro-info {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      text-align: left;
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: #333;
     }
 
     .intro-info p {
       font-size: 1rem;
-      margin-bottom: 1rem;
+      line-height: 1.6;
+      margin: 10px 0;
     }
 
     .intro-info ol {
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
+      text-align: left;
+      margin: 10px 0;
+      padding-left: 20px;
     }
 
     .start-button {
-      padding: 0.75rem 2rem;
-      font-size: 1.25rem;
-      font-weight: 600;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.5rem;
       color: white;
-      background: var(--secondary);
+      background-color: #4caf50;
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      transition: var(--transition);
       animation: pulse 1.5s infinite;
+      transition: background-color 0.3s ease;
     }
 
-    .start-button:hover, .start-button:focus {
-      background: #388e3c;
-      outline: none;
+    .start-button:hover {
+      background-color: #45a049;
     }
 
     .game-page {
-      display: none;
-      padding: 2rem 1rem;
-      flex: 1;
+      display: none; /* Hidden by default */
+      padding: 20px;
     }
 
     .game-page h2 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
     }
 
     canvas {
+      border: 2px solid #ddd;
       max-width: 100%;
       height: auto;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      background: white;
-      box-shadow: var(--shadow);
-      touch-action: none; /* Prevent default touch scrolling */
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 500px; /* Display size */
+      height: 500px; /* Display size */
     }
 
     .controls {
+      margin-top: 20px;
       display: flex;
+      justify-content: center;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-      margin: 1.5rem 0;
     }
 
-    .controls button, .controls input, .controls select {
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
+    .controls button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 5px;
+      cursor: pointer;
       border: none;
-      border-radius: 8px;
-      background: var(--secondary);
+      border-radius: 5px;
+      background-color: #4caf50;
       color: white;
-      cursor: pointer;
-      transition: var(--transition);
+      transition: background-color 0.3s ease;
     }
 
-    .controls button:hover, .controls button:focus {
-      background: #388e3c;
-      outline: none;
-    }
-
-    .controls input[type="color"] {
-      padding: 0;
-      width: 40px;
-      height: 40px;
-      background: none;
-      cursor: pointer;
-    }
-
-    .controls input[type="range"] {
-      background: none;
-      width: 100px;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      padding: 0.5rem;
-      background: var(--secondary);
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 1000;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      max-width: 90%;
-      max-height: 90%;
-      overflow: auto;
-    }
-
-    .modal img {
-      max-width: 100%;
-      max-height: 60vh;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+    .controls button:hover {
+      background-color: #45a049;
     }
 
     footer {
-      padding: 1.5rem;
-      background: #222;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #333;
       color: white;
-      text-align: center;
     }
 
     footer a {
-      color: var(--secondary);
+      color: #4caf50;
       text-decoration: none;
-      transition: var(--transition);
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .logo { width: 50px; }
-      .intro-info { padding: 1rem; }
-      .controls { gap: 0.5rem; }
-      canvas { max-width: 90vw; }
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 2rem; }
-      .start-button { padding: 0.5rem 1.5rem; font-size: 1rem; }
-      .controls button, .controls input, .controls select { font-size: 0.8rem; padding: 0.4rem 0.8rem; }
+      h1 {
+        font-size: 2rem;
+      }
+      .start-button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
+      .logo {
+        width: 60px; /* Smaller logo for mobile */
+      }
     }
   </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHLG2THV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHLG2THV"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
-    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
-      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-    </svg>
-  </button>
 
   <!-- Introduction Page -->
   <header>
-    <img src="logo.png" alt="Dip Image Generator Logo" class="logo" loading="lazy">
+    <!-- Logo Added Here -->
+    <img src="IMG_3828.jpeg" alt="Logo" class="logo">
     <h1>Dip Image Generator</h1>
-    <p class="tagline">Unleash Your Creativity!</p>
+    <p class="tagline">Dip into Creativity!</p>
     <div class="intro-info">
-      <p>Welcome to <strong>Dip Image Generator</strong>, powered by Lorem Picsum. Create stunning images with customizable options for artists, designers, and creators.</p>
+      <p>Welcome to <strong>Dip Image Generator</strong>! This tool allows you to generate images. Perfect for artists, educators, and anyone who loves creativity!</p>
       <p>How it works:</p>
       <ol>
         <li>Tap <strong>Start</strong> to begin.</li>
-        <li>Generate images with effects like grayscale or blur.</li>
-        <li>Draw with custom colors and brushes.</li>
-        <li>Download your masterpiece!</li>
+        <li>Generate new images.</li>
+        <li>Download your masterpiece when you're done!</li>
       </ol>
     </div>
-    <button class="start-button" onclick="startGame()" aria-label="Start generating images">Start Creating</button>
+    <button class="start-button" onclick="startGame()">Tap to Start</button>
   </header>
 
   <!-- Game Page -->
   <main>
     <section id="game-page" class="game-page">
       <h2>Generate Your Image</h2>
-      <canvas id="drawing-canvas" aria-label="Drawing canvas"></canvas>
+      <canvas id="drawing-canvas"></canvas>
       <div class="controls">
-        <button onclick="clearCanvas()" aria-label="Clear canvas">Clear</button>
-        <button onclick="generateNewImage()" aria-label="Generate new image">New Image</button>
-        <button onclick="undo()" aria-label="Undo last action">Undo</button>
-        <button onclick="redo()" aria-label="Redo last action">Redo</button>
-        <button onclick="previewImage()" aria-label="Preview and download image">Download</button>
-        <input type="color" id="color-picker" value="#ff0000" aria-label="Choose drawing color">
-        <input type="range" id="brush-size" min="1" max="50" value="10" aria-label="Adjust brush size">
-        <select id="image-effect" aria-label="Select image effect">
-          <option value="">None</option>
-          <option value="?grayscale">Grayscale</option>
-          <option value="?blur=5">Blur</option>
-          <option value="?grayscale&blur=5">Grayscale + Blur</option>
-        </select>
+        <button onclick="clearCanvas()">Clear Canvas</button>
+        <button onclick="generateNewImage()">Generate New Image</button>
+        <button onclick="downloadImage()">Download Image</button>
       </div>
     </section>
   </main>
 
-  <!-- Preview Modal -->
-  <div id="preview-modal" class="modal">
-    <div class="modal-content">
-      <img id="preview-image" alt="Image preview">
-      <div class="controls">
-        <button onclick="downloadImage()" aria-label="Download image">Download</button>
-        <button onclick="closeModal()" aria-label="Close preview">Close</button>
-      </div>
-    </div>
-  </div>
-
   <!-- Footer -->
   <footer>
-    <p>Designed by <strong>Kofi Fosu</strong></p>
+    <p>Design by <strong>Kofi Fosu</strong></p>
     <p>Email: <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
-    <p>&copy; 2025 Dip Image Generator. All rights reserved.</p>
   </footer>
 
   <script>
-    // Canvas Setup
+    // Canvas and Context
     const canvas = document.getElementById("drawing-canvas");
     const ctx = canvas.getContext("2d");
-    const colorPicker = document.getElementById("color-picker");
-    const brushSize = document.getElementById("brush-size");
-    const effectSelect = document.getElementById("image-effect");
-    const previewModal = document.getElementById("preview-modal");
-    const previewImage = document.getElementById("preview-image");
 
-    // Canvas Resolution
-    const maxCanvasSize = 800; // Max dimension for performance
-    let scaleFactor = window.devicePixelRatio || 1;
-    let canvasWidth = Math.min(window.innerWidth * 0.9, maxCanvasSize);
-    let canvasHeight = canvasWidth; // Square canvas
-    canvas.width = canvasWidth * scaleFactor;
-    canvas.height = canvasHeight * scaleFactor;
-    canvas.style.width = `${canvasWidth}px`;
-    canvas.style.height = `${canvasHeight}px`;
-    ctx.scale(scaleFactor, scaleFactor);
+    // Set canvas resolution to be high (e.g., 2x display size for sharpness)
+    const displayWidth = 500; // Display size
+    const displayHeight = 500; // Display size
+    const scaleFactor = 2; // Increase for higher resolution
+    canvas.width = displayWidth * scaleFactor;
+    canvas.height = displayHeight * scaleFactor;
+    canvas.style.width = `${displayWidth}px`;
+    canvas.style.height = `${displayHeight}px`;
+    ctx.scale(scaleFactor, scaleFactor); // Scale the context to match display size
 
-    // Drawing State
-    let isDrawing = false;
-    let lastX = 0;
-    let lastY = 0;
-    let history = [];
-    let historyIndex = -1;
-
-    // Save State
-    function saveState() {
-      history = history.slice(0, historyIndex + 1);
-      history.push(canvas.toDataURL());
-      historyIndex++;
-      if (history.length > 50) history.shift(); // Limit history size
-    }
-
-    // Undo/Redo
-    function undo() {
-      if (historyIndex > 0) {
-        historyIndex--;
-        const img = new Image();
-        img.src = history[historyIndex];
-        img.onload = () => ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
-        gtag('event', 'undo', { event_category: 'Canvas', event_label: 'Undo Action' });
-      }
-    }
-
-    function redo() {
-      if (historyIndex < history.length - 1) {
-        historyIndex++;
-        const img = new Image();
-        img.src = history[historyIndex];
-        img.onload = () => ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
-        gtag('event', 'redo', { event_category: 'Canvas', event_label: 'Redo Action' });
-      }
-    }
-
-    // Start Game
+    // Start Game Function
     function startGame() {
+      // Hide intro page and show game page
       document.querySelector("header").style.display = "none";
       document.getElementById("game-page").style.display = "block";
+
+      // Load initial outline image
       generateNewImage();
-      saveState();
-      gtag('event', 'start', { event_category: 'Game', event_label: 'Start Creating' });
     }
 
-    // Generate New Image
+    // Generate New Image Function (Mock API Call)
     function generateNewImage() {
-      const effect = effectSelect.value;
+      // Mock API call to generate an outline image
       const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = `https://picsum.photos/seed/${Math.random()}/${canvasWidth}/${canvasHeight}.webp${effect}`;
+      img.crossOrigin = "anonymous"; // Allow cross-origin image download
+      img.src = `https://picsum.photos/${canvas.width}/${canvas.height}?random=${Math.random()}`; // High-resolution image
       img.onload = () => {
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
-        saveState();
-        gtag('event', 'generate_image', { event_category: 'Canvas', event_label: effect || 'None' });
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+        ctx.drawImage(img, 0, 0, displayWidth, displayHeight); // Draw new image
       };
-      img.onerror = () => console.error("Failed to load image.");
+      img.onerror = () => {
+        console.error("Failed to load image. Please try again.");
+      };
     }
 
-    // Clear Canvas
+    // Clear Canvas Function
     function clearCanvas() {
-      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-      saveState();
-      gtag('event', 'clear', { event_category: 'Canvas', event_label: 'Clear Canvas' });
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    // Preview Image
-    function previewImage() {
-      previewImage.src = canvas.toDataURL("image/webp", 1.0);
-      previewModal.style.display = "flex";
-      gtag('event', 'preview', { event_category: 'Canvas', event_label: 'Preview Image' });
-    }
-
-    // Download Image
+    // Download Image Function
     function downloadImage() {
       const link = document.createElement("a");
-      link.download = "dip-image.webp";
-      link.href = canvas.toDataURL("image/webp", 1.0);
+      link.download = "dip-image.png";
+      link.href = canvas.toDataURL("image/png", 1.0); // Highest quality
       link.click();
-      closeModal();
-      gtag('event', 'download', { event_category: 'Canvas', event_label: 'Download Image' });
     }
 
-    // Close Modal
-    function closeModal() {
-      previewModal.style.display = "none";
-    }
+    // Coloring Logic
+    let isDrawing = false;
 
-    // Drawing Logic
-    function startDrawing(x, y) {
-      isDrawing = true;
-      [lastX, lastY] = [x, y];
-    }
+    canvas.addEventListener("mousedown", () => (isDrawing = true));
+    canvas.addEventListener("mouseup", () => (isDrawing = false));
+    canvas.addEventListener("mousemove", draw);
 
-    function stopDrawing() {
-      if (isDrawing) {
-        isDrawing = false;
-        saveState();
-      }
-    }
-
-    function draw(x, y) {
+    function draw(event) {
       if (!isDrawing) return;
-      ctx.beginPath();
-      ctx.moveTo(lastX, lastY);
-      ctx.lineTo(x, y);
-      ctx.strokeStyle = colorPicker.value;
-      ctx.lineWidth = brushSize.value;
-      ctx.lineCap = "round";
-      ctx.stroke();
-      [lastX, lastY] = [x, y];
-    }
-
-    // Event Listeners (Unified for Mouse and Touch)
-    function getCoordinates(event) {
       const rect = canvas.getBoundingClientRect();
-      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-      const clientY = event.touches ? event.touches[0].clientY : event.clientY;
-      return [
-        (clientX - rect.left) * (canvasWidth / rect.width),
-        (clientY - rect.top) * (canvasHeight / rect.height)
-      ];
-    }
+      const x = (event.clientX - rect.left) * scaleFactor; // Adjust for high-res canvas
+      const y = (event.clientY - rect.top) * scaleFactor; // Adjust for high-res canvas
 
-    canvas.addEventListener("mousedown", (e) => startDrawing(...getCoordinates(e)));
-    canvas.addEventListener("touchstart", (e) => {
-      e.preventDefault();
-      startDrawing(...getCoordinates(e));
-    });
-
-    canvas.addEventListener("mouseup", stopDrawing);
-    canvas.addEventListener("touchend", stopDrawing);
-
-    canvas.addEventListener("mousemove", (e) => draw(...getCoordinates(e)));
-    canvas.addEventListener("touchmove", (e) => {
-      e.preventDefault();
-      draw(...getCoordinates(e));
-    });
-
-    // Theme Toggle
-    function toggleTheme() {
-      const theme = document.body.dataset.theme === "dark" ? "light" : "dark";
-      document.body.dataset.theme = theme;
-      localStorage.setItem("theme", theme);
-      gtag('event', 'theme_toggle', { event_category: 'UI', event_label: theme });
-    }
-
-    // Load Theme
-    const savedTheme = localStorage.getItem("theme") || "light";
-    document.body.dataset.theme = savedTheme;
-
-    // Keyboard Accessibility
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && document.querySelector("header").style.display !== "none") {
-        startGame();
-      }
-      if (e.key === "Escape" && previewModal.style.display === "flex") {
-        closeModal();
-      }
-    });
-
-    // Resize Handler
-    window.addEventListener("resize", () => {
-      canvasWidth = Math.min(window.innerWidth * 0.9, maxCanvasSize);
-      canvasHeight = canvasWidth;
-      canvas.width = canvasWidth * scaleFactor;
-      canvas.height = canvasHeight * scaleFactor;
-      canvas.style.width = `${canvasWidth}px`;
-      canvas.style.height = `${canvasHeight}px`;
-      ctx.scale(scaleFactor, scaleFactor);
-      generateNewImage(); // Redraw on resize
-    });
-  </script>
-
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Dip Image Generator",
-      "description": "A creative tool to generate and customize images using Lorem Picsum.",
-      "url": "https://dip-image-generator.example.com",
-      "creator": {
-        "@type": "Person",
-        "name": "Kofi Fosu",
-        "email": "cosmoscoderr@gmail.com"
-      },
-      "applicationCategory": "Design",
-      "operatingSystem": "All"
+      ctx.fillStyle = "#ff0000"; // Default color (red)
+      ctx.fillRect(x, y, 10, 10); // Draw a small square at the mouse position
     }
   </script>
 </body>
