@@ -20,163 +20,14 @@
     gtag('js', new Date());
     gtag('config', 'G-1DYY3L1W27');
   </script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      text-align: center;
-      color: #333;
-    }
 
-    header {
-      background-color: #ff6f61;
-      color: white;
-      padding: 40px 20px;
-      position: relative;
-    }
-
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 80px; /* Adjust size as needed */
-      height: auto;
-      animation: pulse 2s infinite; /* Pulsating effect */
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-      font-weight: bold;
-    }
-
-    .tagline {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-
-    .intro-info {
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      color: #333;
-    }
-
-    .intro-info p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin: 10px 0;
-    }
-
-    .intro-info ol {
-      text-align: left;
-      margin: 10px 0;
-      padding-left: 20px;
-    }
-
-    .start-button {
-      margin-top: 30px;
-      padding: 15px 30px;
-      font-size: 1.5rem;
-      color: white;
-      background-color: #4caf50;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      animation: pulse 1.5s infinite;
-      transition: background-color 0.3s ease;
-    }
-
-    .start-button:hover {
-      background-color: #45a049;
-    }
-
-    .game-page {
-      display: none; /* Hidden by default */
-      padding: 20px;
-    }
-
-    .game-page h2 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    canvas {
-      border: 2px solid #ddd;
-      max-width: 100%;
-      height: auto;
-      margin-top: 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 500px; /* Display size */
-      height: 500px; /* Display size */
-    }
-
-    .controls {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .controls button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background-color: #4caf50;
-      color: white;
-      transition: background-color 0.3s ease;
-    }
-
-    .controls button:hover {
-      background-color: #45a049;
-    }
-
-    footer {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #333;
-      color: white;
-    }
-
-    footer a {
-      color: #4caf50;
-      text-decoration: none;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-      .start-button {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-      }
-      .logo {
-        width: 60px; /* Smaller logo for mobile */
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -184,49 +35,67 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+  <!-- Particle Background (Added via JS) -->
+  <div class="cosmic-orb"></div>
+
   <!-- Introduction Page -->
   <header>
-    <!-- Logo Added Here -->
+    <div class="cosmic-particles"></div>
     <img src="IMG_3828.jpeg" alt="Logo" class="logo">
     <h1>Dip Image Generator</h1>
-    <p class="tagline">Dip into Creativity!</p>
-    <div class="intro-info">
-      <p>Welcome to <strong>Dip Image Generator</strong>! This tool allows you to generate images. Perfect for artists, educators, and anyone who loves creativity!</p>
+    <p class="tagline">Explore the Cosmos of Creativity</p>
+    <div class="intro-info glass-card">
+      <p>Welcome to <strong>Dip Image Generator</strong>! This cosmic tool allows you to generate stunning images with just a few clicks. Perfect for artists, educators, and anyone who loves to explore their creativity!</p>
       <p>How it works:</p>
       <ol>
-        <li>Tap <strong>Start</strong> to begin.</li>
-        <li>Generate new images.</li>
-        <li>Download your masterpiece when you're done!</li>
+        <li>Tap <strong>Start</strong> to begin your creative journey</li>
+        <li>Generate new images from the cosmic database</li>
+        <li>Download your masterpiece when you're satisfied!</li>
       </ol>
     </div>
-    <button class="start-button" onclick="startGame()">Tap to Start</button>
+    <button class="start-button" onclick="startGame()">
+      <span class="btn-text">Begin Journey</span>
+      <span class="btn-icon"><i class="fas fa-rocket"></i></span>
+    </button>
   </header>
 
   <!-- Game Page -->
   <main>
     <section id="game-page" class="game-page">
-      <h2>Generate Your Image</h2>
-      <canvas id="drawing-canvas"></canvas>
+      <h2>Create Your Cosmic Masterpiece</h2>
+      <div class="canvas-container glass-card">
+        <canvas id="drawing-canvas"></canvas>
+      </div>
       <div class="controls">
-        <button onclick="clearCanvas()">Clear Canvas</button>
-        <button onclick="generateNewImage()">Generate New Image</button>
-        <button onclick="downloadImage()">Download Image</button>
+        <button onclick="clearCanvas()">
+          <i class="fas fa-eraser"></i> Clear Canvas
+        </button>
+        <button onclick="generateNewImage()">
+          <i class="fas fa-sync-alt"></i> Generate New Image
+        </button>
+        <button onclick="downloadImage()">
+          <i class="fas fa-download"></i> Download Image
+        </button>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>Design by <strong>Kofi Fosu</strong></p>
-    <p>Email: <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
+  <!-- Footer only visible in game page -->
+  <footer id="footer" style="display: none;">
+    <div class="footer-content">
+      <p>&copy; 2025 Dip Image Generator</p>
+    </div>
   </footer>
 
+  <!-- Custom JS -->
+  <script src="app.js"></script>
+  
   <script>
-    // Canvas and Context
+    // Canvas and Context Setup
     const canvas = document.getElementById("drawing-canvas");
     const ctx = canvas.getContext("2d");
 
-    // Set canvas resolution to be high (e.g., 2x display size for sharpness)
+    // Set canvas resolution to be high for sharpness
     const displayWidth = 500; // Display size
     const displayHeight = 500; // Display size
     const scaleFactor = 2; // Increase for higher resolution
@@ -236,60 +105,431 @@
     canvas.style.height = `${displayHeight}px`;
     ctx.scale(scaleFactor, scaleFactor); // Scale the context to match display size
 
-    // Start Game Function
+    // Color palette for drawing
+    const colorPalette = [
+      '#6c63ff', // Primary color
+      '#4caf50', // Secondary color
+      '#ff6f61', // Accent color
+      '#f9d423', // Yellow
+      '#00d2ff', // Cyan
+      '#ffffff'  // White
+    ];
+    let currentColor = colorPalette[0];
+    let brushSize = 5;
+
+    // Start Game Function with Enhanced Animation
     function startGame() {
-      // Hide intro page and show game page
-      document.querySelector("header").style.display = "none";
-      document.getElementById("game-page").style.display = "block";
-
-      // Load initial outline image
-      generateNewImage();
+      // Add loading animation with improved visual feedback
+      const startButton = document.querySelector('.start-button');
+      const header = document.querySelector("header");
+      const gamePage = document.getElementById("game-page");
+      const footer = document.getElementById("footer");
+      
+      // Disable button to prevent multiple clicks
+      startButton.disabled = true;
+      startButton.classList.add('loading');
+      
+      // Create a ripple effect from the button
+      const ripple = document.createElement('div');
+      ripple.classList.add('ripple-effect');
+      document.body.appendChild(ripple);
+      
+      // Position ripple at button center
+      const buttonRect = startButton.getBoundingClientRect();
+      ripple.style.left = `${buttonRect.left + buttonRect.width/2}px`;
+      ripple.style.top = `${buttonRect.top + buttonRect.height/2}px`;
+      
+      // Animate ripple
+      setTimeout(() => {
+        ripple.style.transform = `scale(${Math.max(window.innerWidth, window.innerHeight) / 50})`;
+        ripple.style.opacity = '0.5';
+        
+        // Begin transition sequence
+        setTimeout(() => {
+          // Smooth transition with transform for better performance
+          header.style.opacity = '0';
+          header.style.transform = 'translateY(-20px)';
+          
+          setTimeout(() => {
+            // Remove ripple
+            ripple.remove();
+            
+            // Hide header and show game page and footer
+            header.style.display = 'none';
+            gamePage.style.display = 'block';
+            footer.style.display = 'block';
+            
+            // Prepare game page for entrance animation
+            gamePage.style.opacity = '0';
+            gamePage.style.transform = 'translateY(20px)';
+            
+            // Trigger entrance animation after a small delay
+            requestAnimationFrame(() => {
+              setTimeout(() => {
+                gamePage.style.opacity = '1';
+                gamePage.style.transform = 'translateY(0)';
+                
+                // Load initial outline image after transition completes
+                setTimeout(() => {
+                  generateNewImage();
+                }, 300);
+              }, 50);
+            });
+          }, 500); // Match transition duration in CSS
+        }, 400);
+      }, 100);
     }
+    
+    // Add CSS for ripple effect
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+      .ripple-effect {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        transform: scale(0);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 9999;
+        transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    `;
+    document.head.appendChild(rippleStyle);
 
-    // Generate New Image Function (Mock API Call)
+    // Generate New Image Function with Enhanced Loading Effect and Higher Quality Images
     function generateNewImage() {
-      // Mock API call to generate an outline image
+      // Show loading effect on canvas with animation
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Create a loading animation
+      const loadingAnimation = {
+        dots: 0,
+        frame: 0,
+        maxDots: 3,
+        interval: null,
+        text: 'Loading cosmic image'
+      };
+      
+      // Create a pulsating background
+      const renderLoading = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw a subtle gradient background
+        const gradient = ctx.createRadialGradient(
+          canvas.width/4, canvas.height/4, 10,
+          canvas.width/4, canvas.height/4, canvas.width/2
+        );
+        gradient.addColorStop(0, 'rgba(108, 99, 255, 0.2)');
+        gradient.addColorStop(1, 'rgba(20, 20, 40, 0.1)');
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw loading text with animated dots
+        ctx.font = '22px Orbitron';
+        ctx.fillStyle = '#6c63ff';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        // Animate the dots
+        loadingAnimation.frame++;
+        if (loadingAnimation.frame % 15 === 0) {
+          loadingAnimation.dots = (loadingAnimation.dots + 1) % (loadingAnimation.maxDots + 1);
+        }
+        
+        const dots = '.'.repeat(loadingAnimation.dots);
+        ctx.fillText(`${loadingAnimation.text}${dots}`, canvas.width/4, canvas.height/4);
+        
+        // Draw a pulsating circle
+        const pulseSize = 30 + Math.sin(loadingAnimation.frame * 0.1) * 10;
+        ctx.beginPath();
+        ctx.arc(canvas.width/4, canvas.height/4 + 50, pulseSize, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(108, 99, 255, 0.1)';
+        ctx.fill();
+      };
+      
+      // Start loading animation
+      loadingAnimation.interval = setInterval(renderLoading, 1000/30); // 30fps
+      
+      // Use a higher quality image source with better resolution
       const img = new Image();
       img.crossOrigin = "anonymous"; // Allow cross-origin image download
-      img.src = `https://picsum.photos/${canvas.width}/${canvas.height}?random=${Math.random()}`; // High-resolution image
+      
+      // Calculate dimensions for higher quality image
+      // Request a larger image than we need and then scale it down for better quality
+      const qualityMultiplier = 2; // Request 2x the size for better quality
+      const requestWidth = Math.round(canvas.width * qualityMultiplier / scaleFactor);
+      const requestHeight = Math.round(canvas.height * qualityMultiplier / scaleFactor);
+      
+      // Add a small timeout to make the loading animation visible
+      setTimeout(() => {
+        // Use a higher quality image source with better parameters
+        // Using unsplash for higher quality images
+        img.src = `https://source.unsplash.com/random/${requestWidth}x${requestHeight}?cosmic,space,galaxy&t=${new Date().getTime()}`;
+        
+        // Fallback to picsum if unsplash fails
+        img.onerror = () => {
+          console.log("Falling back to picsum photos");
+          img.src = `https://picsum.photos/${requestWidth}/${requestHeight}?random=${Math.random()}`;
+        };
+      }, 500);
+      
+      // Set a timeout to handle very slow connections
+      const timeoutId = setTimeout(() => {
+        if (loadingAnimation.interval) {
+          clearInterval(loadingAnimation.interval);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = 'rgba(255, 111, 97, 0.8)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.font = '20px Orbitron';
+          ctx.fillStyle = 'white';
+          ctx.textAlign = 'center';
+          ctx.fillText('Connection timeout. Please try again.', canvas.width/4, canvas.height/4);
+        }
+      }, 15000); // 15 second timeout
+      
       img.onload = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-        ctx.drawImage(img, 0, 0, displayWidth, displayHeight); // Draw new image
+        // Clear the timeout and loading animation
+        clearTimeout(timeoutId);
+        clearInterval(loadingAnimation.interval);
+        
+        // Add a smooth fade-in effect using requestAnimationFrame for better performance
+        let opacity = 0;
+        let lastTime = 0;
+        
+        const fadeIn = (timestamp) => {
+          if (!lastTime) lastTime = timestamp;
+          const deltaTime = timestamp - lastTime;
+          lastTime = timestamp;
+          
+          // Increase opacity at a consistent rate regardless of frame rate
+          opacity += deltaTime * 0.001; // Adjust speed here
+          
+          if (opacity >= 1) {
+            opacity = 1;
+            // Final render at full opacity
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.globalAlpha = 1;
+            ctx.drawImage(img, 0, 0, displayWidth, displayHeight);
+            return;
+          }
+          
+          // Render at current opacity
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.globalAlpha = opacity;
+          ctx.drawImage(img, 0, 0, displayWidth, displayHeight);
+          ctx.globalAlpha = 1.0;
+          
+          // Continue animation
+          requestAnimationFrame(fadeIn);
+        };
+        
+        // Start the fade-in animation
+        requestAnimationFrame(fadeIn);
       };
+      
       img.onerror = () => {
+        // Clear the timeout and loading animation
+        clearTimeout(timeoutId);
+        clearInterval(loadingAnimation.interval);
+        
         console.error("Failed to load image. Please try again.");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Create error message with gradient background
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, 'rgba(255, 111, 97, 0.7)');
+        gradient.addColorStop(1, 'rgba(20, 20, 40, 0.8)');
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw error icon
+        ctx.beginPath();
+        ctx.arc(canvas.width/4, canvas.height/4 - 40, 30, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.fill();
+        
+        ctx.font = 'bold 40px sans-serif';
+        ctx.fillStyle = 'rgba(255, 111, 97, 0.9)';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('!', canvas.width/4, canvas.height/4 - 40);
+        
+        // Draw error message
+        ctx.font = '20px Orbitron';
+        ctx.fillStyle = 'white';
+        ctx.fillText('Error loading image', canvas.width/4, canvas.height/4 + 20);
+        ctx.font = '16px Inter';
+        ctx.fillText('Please try again', canvas.width/4, canvas.height/4 + 50);
       };
     }
 
-    // Clear Canvas Function
+    // Clear Canvas Function with Enhanced Animation
     function clearCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Create a more visually appealing wipe animation using requestAnimationFrame
+      let progress = 0;
+      let lastTime = 0;
+      
+      const wipeAnimation = (timestamp) => {
+        if (!lastTime) lastTime = timestamp;
+        const deltaTime = timestamp - lastTime;
+        lastTime = timestamp;
+        
+        // Calculate progress based on time for smooth animation regardless of frame rate
+        progress += deltaTime * 0.002; // Adjust speed here
+        
+        if (progress >= 1) {
+          // Animation complete, clear the entire canvas
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          return;
+        }
+        
+        // Create a smooth easing effect
+        const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        const easedProgress = easeInOutCubic(progress);
+        
+        // Calculate width based on eased progress
+        const width = canvas.width * easedProgress;
+        
+        // Add a subtle gradient to the wipe effect
+        const gradient = ctx.createLinearGradient(width - 20, 0, width, 0);
+        gradient.addColorStop(0, 'rgba(108, 99, 255, 0)');
+        gradient.addColorStop(1, 'rgba(108, 99, 255, 0.2)');
+        
+        // Clear the canvas up to the current width
+        ctx.clearRect(0, 0, width, canvas.height);
+        
+        // Draw a subtle gradient at the wipe edge
+        ctx.fillStyle = gradient;
+        ctx.fillRect(width - 20, 0, 20, canvas.height);
+        
+        // Continue the animation
+        requestAnimationFrame(wipeAnimation);
+      };
+      
+      // Start the animation
+      requestAnimationFrame(wipeAnimation);
     }
 
-    // Download Image Function
+    // Download Image Function with Feedback
     function downloadImage() {
+      // Add visual feedback
+      const downloadBtn = document.querySelector('.controls button:nth-child(3)');
+      downloadBtn.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+      downloadBtn.style.backgroundColor = 'var(--secondary-color)';
+      
+      // Create high-quality download
       const link = document.createElement("a");
-      link.download = "dip-image.png";
+      link.download = `cosmic-image-${new Date().getTime()}.png`;
       link.href = canvas.toDataURL("image/png", 1.0); // Highest quality
       link.click();
+      
+      // Reset button after delay
+      setTimeout(() => {
+        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download Image';
+        downloadBtn.style.backgroundColor = '';
+      }, 2000);
     }
 
-    // Coloring Logic
+    // Enhanced Drawing Logic
     let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
 
-    canvas.addEventListener("mousedown", () => (isDrawing = true));
-    canvas.addEventListener("mouseup", () => (isDrawing = false));
+    // Mouse events for drawing
+    canvas.addEventListener("mousedown", (e) => {
+      isDrawing = true;
+      const rect = canvas.getBoundingClientRect();
+      lastX = (e.clientX - rect.left) * scaleFactor;
+      lastY = (e.clientY - rect.top) * scaleFactor;
+    });
+    
+    canvas.addEventListener("mouseup", () => {
+      isDrawing = false;
+    });
+    
+    canvas.addEventListener("mouseleave", () => {
+      isDrawing = false;
+    });
+    
     canvas.addEventListener("mousemove", draw);
 
+    // Touch events for mobile
+    canvas.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      isDrawing = true;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      lastX = (touch.clientX - rect.left) * scaleFactor;
+      lastY = (touch.clientY - rect.top) * scaleFactor;
+    });
+    
+    canvas.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      isDrawing = false;
+    });
+    
+    canvas.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      if (!isDrawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const touch = e.touches[0];
+      const x = (touch.clientX - rect.left) * scaleFactor;
+      const y = (touch.clientY - rect.top) * scaleFactor;
+      drawLine(lastX, lastY, x, y);
+      lastX = x;
+      lastY = y;
+    });
+
+    // Smooth line drawing function
     function draw(event) {
       if (!isDrawing) return;
       const rect = canvas.getBoundingClientRect();
-      const x = (event.clientX - rect.left) * scaleFactor; // Adjust for high-res canvas
-      const y = (event.clientY - rect.top) * scaleFactor; // Adjust for high-res canvas
-
-      ctx.fillStyle = "#ff0000"; // Default color (red)
-      ctx.fillRect(x, y, 10, 10); // Draw a small square at the mouse position
+      const x = (event.clientX - rect.left) * scaleFactor;
+      const y = (event.clientY - rect.top) * scaleFactor;
+      
+      drawLine(lastX, lastY, x, y);
+      lastX = x;
+      lastY = y;
     }
+
+    function drawLine(fromX, fromY, toX, toY) {
+      ctx.beginPath();
+      ctx.moveTo(fromX, fromY);
+      ctx.lineTo(toX, toY);
+      ctx.strokeStyle = currentColor;
+      ctx.lineWidth = brushSize;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.stroke();
+      ctx.closePath();
+      
+      // Add a subtle glow effect
+      ctx.beginPath();
+      ctx.moveTo(fromX, fromY);
+      ctx.lineTo(toX, toY);
+      ctx.strokeStyle = currentColor + '40'; // 25% opacity
+      ctx.lineWidth = brushSize + 4;
+      ctx.stroke();
+      ctx.closePath();
+    }
+    
+    // Initialize game page with proper opacity for transition
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("game-page").style.opacity = 0;
+      
+      // Add cosmic orb animation
+      const cosmicOrb = document.querySelector('.cosmic-orb');
+      if (cosmicOrb) {
+        setInterval(() => {
+          const hue = Math.floor(Math.random() * 60) + 220; // Blue-purple range
+          cosmicOrb.style.boxShadow = `0 0 100px 50px hsla(${hue}, 100%, 70%, 0.3)`;
+        }, 2000);
+      }
+    });
   </script>
 </body>
 </html>
